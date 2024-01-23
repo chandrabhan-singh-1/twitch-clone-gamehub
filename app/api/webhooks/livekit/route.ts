@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
     const authorization = headerPayload.get("Authorization");
 
     if (!authorization) {
-      return new NextResponse("Not authorization Header", { status: 400 });
+      return new NextResponse("No authorization Header", { status: 400 });
     }
 
     const event = receiver.receive(body, authorization);

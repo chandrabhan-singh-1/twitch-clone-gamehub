@@ -1,7 +1,6 @@
 "use client";
 
 import { useViewerToken } from "@/hooks/use-viewer-token";
-import { Stream, User } from "@prisma/client";
 import { LiveKitRoom } from "@livekit/components-react";
 import { Video, VideoSkeleton } from "./video";
 import { useChatSidebar } from "@/store/use-chat-sidebar";
@@ -46,7 +45,9 @@ export const StreamPlayer = ({
   const { isExpanded } = useChatSidebar((state) => state);
 
   if (!token || !name || !identity) {
-    return <StreamPlayerSkeleton />;
+    return (
+      <StreamPlayerSkeleton /> || <div> Not allowed to watch the stream! </div>
+    );
   }
 
   return (
@@ -60,11 +61,11 @@ export const StreamPlayer = ({
         token={token}
         serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_WS_URL!}
         className={cn(
-          "grid grid-cols-1 lg:gap-y-0 lg:grid-cols-3  2xl:grid-cols-6 h-full",
-          isExpanded ? "" : "lg:grid-cols-2"
+          "grid grid-cols-1 lg:gap-y-0 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-6 h-full",
+          isExpanded ? "" : "lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2"
         )}
       >
-        <div className="space-y-4 col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-5 lg:overflw-y-auto hidden-scrollbar pb-10">
+        <div className="space-y-4 col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-5 lg:overflow-y-auto hidden-scrollbar pb-10">
           <Video hostName={user.username} hostIdentity={user.id} />
           <Header
             hostName={user.username}

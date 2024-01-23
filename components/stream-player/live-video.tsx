@@ -1,7 +1,7 @@
 "use client";
 
-import { Participant, Track } from "livekit-client";
 import { useRef, useState, useEffect } from "react";
+import { Participant, Track } from "livekit-client";
 import { useTracks } from "@livekit/components-react";
 import { FullscreenControl } from "./fullscreen-control";
 import { useEventListener } from "usehooks-ts";
@@ -33,7 +33,7 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
 
     if (videoRef?.current) {
       videoRef.current.muted = !isMuted;
-      videoRef.current.volume = isMuted ? 0.5 : 0;
+      videoRef.current.volume = isMuted ? 0.02 : 0;
     }
   };
 

@@ -38,7 +38,7 @@ export const ChatInfo = ({ isDelayed, isFollowersOnly }: ChatInfoProps) => {
 
   return (
     <div className="p-2 text-muted-foreground bg-white/5 border border-white/10 w-full rounded-t-md flex items-center gap-x-2">
-      <Hint side="left" label={label}>
+      <Hint side="left" label={hint}>
         <Info className="h-4 w-4 text-sky-400" />
       </Hint>
       <p className="text-xs font-semibold">{label}</p>

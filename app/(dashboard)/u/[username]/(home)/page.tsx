@@ -8,7 +8,7 @@ interface DashboarPageProps {
   };
 }
 
-export default async function ({ params }: DashboarPageProps) {
+export default async function DashboardPage({ params }: DashboarPageProps) {
   const externalUser = await currentUser();
   const user = await getUserByUsername(params.username);
 

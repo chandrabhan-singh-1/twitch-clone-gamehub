@@ -10,7 +10,7 @@ import { Button } from "../ui/button";
 
 interface CommunityItemProps {
   hostName: string;
-  participantName: string;
+  participantName?: string;
   viewerName: string;
   participantIdentity: string;
 }
@@ -28,7 +28,7 @@ export const CommunityItem = ({
   const [isPending, startTransition] = useTransition();
 
   const handleBlock = () => {
-    if (!participantName || isSelf || isHost) return;
+    if (!participantName || isSelf || !isHost) return;
 
     startTransition(() => {
       onBlock(participantIdentity)

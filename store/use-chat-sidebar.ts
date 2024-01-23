@@ -10,7 +10,7 @@ interface ChatSidebarStore {
   variant: ChatVariant;
   collapse: () => void;
   expand: () => void;
-  onChangeVariant: (variant: ChatVariant) => void;
+  changeVariant: (variant: ChatVariant) => void;
 }
 
 export const useChatSidebar = create<ChatSidebarStore>((set) => ({
@@ -18,5 +18,5 @@ export const useChatSidebar = create<ChatSidebarStore>((set) => ({
   variant: ChatVariant.CHAT,
   expand: () => set(() => ({ isExpanded: true })),
   collapse: () => set(() => ({ isExpanded: false })),
-  onChangeVariant: (variant: ChatVariant) => set(() => ({ variant: variant })),
+  changeVariant: (variant: ChatVariant) => set(() => ({ variant: variant })),
 }));

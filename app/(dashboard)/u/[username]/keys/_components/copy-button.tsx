@@ -5,7 +5,7 @@ import { CheckCheck, Copy } from "lucide-react";
 import { useState } from "react";
 
 interface CopyButtonProps {
-  value: string | "";
+  value?: string;
 }
 
 export const CopyButton = ({ value }: CopyButtonProps) => {
@@ -27,7 +27,7 @@ export const CopyButton = ({ value }: CopyButtonProps) => {
     <Button
       disabled={!value || isCopied}
       onClick={onCopy}
-      variant={"secondary"}
+      variant={"ghost"}
       size={"sm"}
     >
       <Icon className="h-4 w-4 text-sky-400" />

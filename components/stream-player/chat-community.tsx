@@ -21,7 +21,7 @@ export const ChatCommunity = ({
 }: ChatCommunityProps) => {
   const participants = useParticipants();
   const [value, setValue] = useState("");
-  const debouncedValue = useDebounce<string>(value, 500);
+  const debouncedValue = useDebounce<string>(value, 700);
 
   const onChange = (newValue: string) => {
     setValue(newValue);
@@ -68,7 +68,7 @@ export const ChatCommunity = ({
             key={participant.identity}
             hostName={hostName}
             viewerName={viewerName}
-            participantName={participant.name || "No Name"}
+            participantName={participant.name}
             participantIdentity={participant.identity}
           />
         ))}

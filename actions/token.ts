@@ -14,7 +14,7 @@ export const createViewerToken = async (hostIdentity: string) => {
     self = await getSelf();
   } catch (error) {
     const id = v4();
-    const username = `guest#${Math.round(Math.random() * 1000)}`;
+    const username = `guest#${Math.round(Math.random() * 10000)}`;
     self = { id, username };
   }
 
@@ -27,7 +27,7 @@ export const createViewerToken = async (hostIdentity: string) => {
   const isBlocked = await isBlockedByUser(host.id);
 
   if (isBlocked) {
-    throw new Error("User is blocked!");
+    throw new Error("You are blocked!");
   }
 
   const isHost = self.id === host.id;

@@ -39,7 +39,7 @@ export const ConnectModal = () => {
       createIngress(parseInt(ingressType))
         .then(() => {
           toast.success("Ingress created successfully!");
-          closeRef?.current?.click();
+          closeRef.current?.click();
         })
         .catch((e) => toast.error(e.error || "Something went wrong!"));
     });
