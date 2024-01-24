@@ -22,7 +22,7 @@ import Image from "next/image";
 
 interface InfoModalProps {
   initialName: string;
-  initialThumbnailUrl: string | null | undefined;
+  initialThumbnailUrl: string | null;
 }
 
 export const InfoModal = ({
@@ -48,7 +48,6 @@ export const InfoModal = ({
           toast.success("Stream updated successfully!");
           closeRef?.current?.click();
         })
-
         .catch((e) => toast.error(e.message || "Something went wrong!"));
     });
   };

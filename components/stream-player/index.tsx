@@ -78,7 +78,7 @@ export const StreamPlayer = ({
           <InfoCard
             hostIdentity={user.id}
             viewerIdentity={identity}
-            name={stream?.name || "No Name"}
+            name={stream?.name}
             thumbnailUrl={stream?.thumbnailUrl}
           />
           <AboutCard
