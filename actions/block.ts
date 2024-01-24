@@ -33,12 +33,12 @@ export const onBlock = async (id: string) => {
 
     revalidatePath(`/u/${self.username}/community`);
 
-    if (blockedUser) {
-      revalidatePath(`/${blockedUser.blocking.username}`);
+    if (!blockedUser) {
+      throw new Error(`blockUser function failed!`);
     }
 
+    revalidatePath(`/${blockedUser.blocking.username}`);
     revalidatePath("/");
-
     return blockedUser;
   } catch (error: any) {
     console.error(`[onBlock Error]: ${error}`);
