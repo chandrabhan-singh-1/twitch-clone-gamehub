@@ -9,7 +9,10 @@ interface DashboardLayoutProps {
   params: { username: string };
 }
 
-export default async function ({ children, params }: DashboardLayoutProps) {
+export default async function DashboardLayout({
+  children,
+  params,
+}: DashboardLayoutProps) {
   const self = await getSelfByUsername(params.username);
 
   if (!self) {
