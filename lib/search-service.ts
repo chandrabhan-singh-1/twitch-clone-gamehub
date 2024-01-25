@@ -29,17 +29,19 @@ export const getSearch = async (term?: string) => {
         OR: [
           {
             name: {
-              contains: term,
+              search: term,
             },
+          },
+          {
             user: {
               OR: [
                 {
-                  username: {
+                  name: {
                     contains: term,
                   },
                 },
                 {
-                  name: {
+                  username: {
                     contains: term,
                   },
                 },
@@ -71,17 +73,19 @@ export const getSearch = async (term?: string) => {
         OR: [
           {
             name: {
-              contains: term,
+              search: term,
             },
+          },
+          {
             user: {
               OR: [
                 {
-                  username: {
+                  name: {
                     contains: term,
                   },
                 },
                 {
-                  name: {
+                  username: {
                     contains: term,
                   },
                 },
