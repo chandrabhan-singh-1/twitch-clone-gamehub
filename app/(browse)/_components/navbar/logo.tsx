@@ -13,12 +13,13 @@ export const Logo = () => {
   return (
     <Link href={"/"}>
       <div className="flex items-center hover:opacity-75 transition">
-        <div className="bg-white rounded-full p-1 mr-10 shrink-0 lg:mr-2">
+        <div className="relative bg-transparent rounded-full p-1 h-16 w-16 mr-10 shrink-0 lg:mr-2">
           <Image
-            src="/spooky.svg"
+            src="/gamehub.jpg"
             alt="Gamehub"
-            height={35}
-            width={35}
+            fill
+            sizes="inherit"
+            className="absolute rounded-full"
             priority
           />
         </div>
